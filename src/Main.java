@@ -3,8 +3,10 @@
 public class Main {
 
     public static void main(String[] args) {
-        User user = new User("Francisco" );
-        user.sayHello();
+        TaxCalculator calculator = getCalculator();
     }
 
+    public static TaxCalculator getCalculator() {
+        return new TaxCalculator2019();
+    }
 }
