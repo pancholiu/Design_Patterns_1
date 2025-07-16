@@ -1,9 +1,17 @@
 package com.codewithmosh.memento;
 
+import MementoExercise.DocumentState;
+import MementoExercise.DocumentState;
+
 public class Document {
     private String content;
     private String fontName;
     private int fontSize;
+
+    public DocumentState createState() {
+        return new DocumentState(content, fontName, fontSize);
+    }
+
 
     public String getContent() {
         return content;
