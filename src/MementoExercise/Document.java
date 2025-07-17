@@ -1,6 +1,5 @@
-package com.codewithmosh.memento;
+package mementoExercise;
 
-import MementoExercise.DocumentState;
 import MementoExercise.DocumentState;
 
 public class Document {
@@ -12,30 +11,24 @@ public class Document {
         return new DocumentState(content, fontName, fontSize);
     }
 
-
     public String getContent() {
-        return content;
+        return toString();
     }
 
-    public void setContent(String content) {
+    public void setContent(String content, String fontName, int fontSize) {
         this.content = content;
-    }
-
-    public String getFontName() {
-        return fontName;
-    }
-
-    public void setFontName(String fontName) {
         this.fontName = fontName;
-    }
-
-    public int getFontSize() {
-        return fontSize;
-    }
-
-    public void setFontSize(int fontSize) {
         this.fontSize = fontSize;
     }
+
+    public void restore(DocumentState state) {
+        var values = state.getValues();
+
+        this.content = (String) values.get("content");
+        this.fontName = (String) values.get("fontName");
+        this.fontSize = (int) values.get("fontSize");
+    }
+
 
     @Override
     public String toString() {
