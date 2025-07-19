@@ -1,13 +1,12 @@
-import state.abuse.Stopwatch;
+import state.Exercise.DirectionService;
 
 
 public class Main {
 
    public static void main(String[] args) {
-      var stopWatch = new Stopwatch();
-      stopWatch.click();
-      stopWatch.click();
-      stopWatch.click();
+      var directionSercice = new DirectionService();
+
+
    }
 
 
