@@ -1,4 +1,4 @@
-package MementoExercise;
+package memento.Exercise;
 
 import java.util.HashMap;
 import java.util.Map;

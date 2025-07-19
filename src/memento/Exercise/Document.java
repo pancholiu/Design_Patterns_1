@@ -1,6 +1,6 @@
 package mementoExercise;
 
-import MementoExercise.DocumentState;
+import memento.Exercise.DocumentState;
 
 public class Document {
     private String content;

@@ -1,19 +1,13 @@
-import memento.Editor;
-import memento.History;
-import mementoExercise.Document;
-import MementoExercise.DocumentHistory;
-import state.Canvas;
-import state.EraserTool;
-import state.SelectionTool;
+import state.abuse.Stopwatch;
 
 
 public class Main {
 
    public static void main(String[] args) {
-      var canvas = new Canvas();
-      canvas.setCurrentTool(new EraserTool());
-      canvas.mouseDown();
-      canvas.mouseUp();
+      var stopWatch = new Stopwatch();
+      stopWatch.click();
+      stopWatch.click();
+      stopWatch.click();
    }
 
 
