@@ -1,12 +1,13 @@
-import state.Exercise.DirectionService;
+import state.Exercise.*;
 
 
 public class Main {
 
    public static void main(String[] args) {
-      var directionSercice = new DirectionService();
+      var directionService = new DirectionService(new DrivingMode());
 
-
+      directionService.getETA();
+      directionService.getDirection();
    }
 
 
