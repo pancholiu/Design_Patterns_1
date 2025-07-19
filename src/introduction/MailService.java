@@ -1,3 +1,5 @@
+package introduction;
+
 public class MailService {
     public void sendEmail() {
         connect(1);

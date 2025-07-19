@@ -1,3 +1,5 @@
+package introduction;
+
 public class User {
     public String name;
 
