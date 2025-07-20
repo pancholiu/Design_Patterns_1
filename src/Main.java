@@ -1,5 +1,5 @@
 import iterator.BrowseHistory;
-import state.Exercise.*;
+import iterator.IteradorSp;
 
 
 public class Main {
@@ -10,9 +10,12 @@ public class Main {
       history.push("b");
       history.push("c");
 
-      for(var i = 0; i < history.getUrls().size(); i++) {
-         var url = history.getUrls().get(i);
+      IteradorSp iteradorSp = history.createIterator();
+      
+      while(iteradorSp.hasNext()) {
+         var url = iteradorSp.current();
          System.out.println(url);
+         iteradorSp.next();
       }
    }
 
