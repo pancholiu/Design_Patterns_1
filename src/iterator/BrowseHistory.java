@@ -1,19 +1,23 @@
 package iterator;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class BrowseHistory {
-    private List<String> urls = new ArrayList<>();
+    private String[] urls =  new String[10];
+    private int index;
+
+    public BrowseHistory() {
+        index = 0;
+    }
 
     public void push(String url) {
-        urls.add(url);
+        urls[index] = url;
+        index ++;
     }
 
     public String pop() {
-        var lastIndex = urls.size() - 1;
-        var lastUrl = urls.get(lastIndex);
-        urls.remove(lastUrl);
+        var lastIndex = urls.length - 1;
+        var lastUrl = urls[lastIndex];
+        urls[lastIndex] = null;
 
         return lastUrl;
     }
@@ -32,12 +36,12 @@ public class BrowseHistory {
 
         @Override
         public boolean hasNext() {
-            return (index < history.urls.size());
+            return urls[index] != null;
         }
 
         @Override
         public String current() {
-            return history.urls.get(index);
+            return history.urls[index];
         }
 
         @Override
