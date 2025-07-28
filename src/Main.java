@@ -1,25 +1,12 @@
-import iterator.BrowseHistory;
-import iterator.IteradorSp;
-import iterator.excercise.IteradorSP;
-import iterator.excercise.Product;
-import iterator.excercise.ProductCollection;
-import strategy.BlackAndWhiteFilter;
-import strategy.ImageStorage;
-import strategy.JpegCompressor;
-import strategy.PngCompressor;
-
+import strategy.excercise.AesEncryption;
+import strategy.excercise.ChatClient;
+import strategy.excercise.DesEncyption;
 
 public class Main {
 
    public static void main(String[] args) {
-         var imageStorage = new ImageStorage();
+        var chatClient = new ChatClient();
 
-         imageStorage.store("a",
-                 new PngCompressor(),
-                 new BlackAndWhiteFilter());
-
-         imageStorage.store("a",
-                 new JpegCompressor(),
-                 new BlackAndWhiteFilter());
+        chatClient.send("The message", new DesEncyption());
    }
 }
