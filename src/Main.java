@@ -1,8 +1,12 @@
-import template.excercise.WindowClose;
+import command.AddCustomerCommand;
+import command.CustomerService;
+import command.fx.Button;
 
 public class Main {
    public static void main(String[] args) {
-      var windowClose = new WindowClose();
-      windowClose.close();
-   }
+      var service = new CustomerService();
+      var command = new AddCustomerCommand(service);
+      var button = new Button(command);
+
+      button.click();
 }
