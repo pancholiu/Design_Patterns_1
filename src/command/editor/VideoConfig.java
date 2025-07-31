@@ -23,7 +23,7 @@ public class VideoConfig implements UndoableCommand {
     }
 
     @Override
-    public void unexecute() {
+    public void undo() {
 
     }
 }

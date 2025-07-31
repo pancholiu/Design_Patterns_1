@@ -1,4 +1,4 @@
-package command.excercise;
+package command.solution;
 
 public class UndoCommand implements Command {
     private History history;
@@ -9,7 +9,7 @@ public class UndoCommand implements Command {
 
     @Override
     public void execute() {
-        if(history.size() > 0)
+        if (history.size() > 0)
             history.pop().undo();
     }
 }

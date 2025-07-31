@@ -1,21 +1,21 @@
-package command.excercise;
-
+package command.solution;
 
 public class SetTextCommand extends AbstractUndoableCommand {
     private String text;
 
     public SetTextCommand(String text, VideoEditor videoEditor, History history) {
-        super(history, videoEditor);
-        this.text = text;
-    }
+        super(videoEditor, history);
 
-    @Override
-    protected void doExecute() {
-        videoEditor.setText(text);
+        this.text = text;
     }
 
     @Override
     public void undo() {
         videoEditor.removeText();
+    }
+
+    @Override
+    protected void doExecute() {
+        videoEditor.setText(text);
     }
 }

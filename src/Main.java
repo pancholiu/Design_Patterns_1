@@ -1,3 +1,5 @@
+package command.excercise;
+
 import command.excercise.*;
 
 public class Main {
@@ -9,7 +11,7 @@ public class Main {
       setTextCommand.execute();
       System.out.println("TEXT: " + videoEditor);
 
-      var setContrast = new SetContrastCommand(5, videoEditor, history);
+      var setContrast = new SetContrastCommand(5, history, videoEditor);
       setContrast.execute();
       System.out.println("CONTRAST: " + videoEditor);
 

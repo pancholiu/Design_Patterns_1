@@ -1,16 +1,15 @@
-package command.excercise;
+package command.solution;
 
 public class SetContrastCommand extends AbstractUndoableCommand {
-    private float contrast;
     private float prevContrast;
+    private float contrast;
 
+    public SetContrastCommand(float contrast, VideoEditor videoEditor, History history) {
+        super(videoEditor, history);
 
-    public SetContrastCommand(float contrast, History history, VideoEditor videoEditor) {
-        super(history, videoEditor);
         prevContrast = videoEditor.getContrast();
         this.contrast = contrast;
     }
-
 
     @Override
     protected void doExecute() {
