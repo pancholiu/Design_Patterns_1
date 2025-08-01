@@ -1,13 +1,8 @@
 package observer.excercise;
 
-public class Stock {
+public class Stock extends Subject {
     private String symbol;
     private float price;
-
-    public Stock(String symbol, float price) {
-        this.symbol = symbol;
-        this.price = price;
-    }
 
     public float getPrice() {
         return price;
@@ -15,6 +10,12 @@ public class Stock {
 
     public void setPrice(float price) {
         this.price = price;
+        notifyObservers();
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+        notifyObservers();
     }
 
     @Override
