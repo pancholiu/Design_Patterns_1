@@ -10,7 +10,8 @@ public abstract class AbstractUndoableCommand implements UndoableCommand {
 
     @Override
     public void execute() {
-
+        doExecute();
+        history.push(this);
     }
 
     protected abstract void doExecute();

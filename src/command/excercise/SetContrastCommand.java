@@ -15,6 +15,7 @@ public class SetContrastCommand extends AbstractUndoableCommand {
     @Override
     protected void doExecute() {
         videoEditor.setContrast(contrast);
+        history.push(this);
     }
 
     @Override
