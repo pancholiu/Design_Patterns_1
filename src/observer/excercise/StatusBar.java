@@ -17,7 +17,7 @@ public class StatusBar implements Observer {
 
     public void show() {
         for (var stock : stocks)
-            System.out.println(stock);
+            System.out.println("StatusBar notified: " + stock);
     }
 
     @Override

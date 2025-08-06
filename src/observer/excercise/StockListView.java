@@ -17,7 +17,7 @@ public class StockListView implements Observer {
 
     public void show() {
         for (var stock : stocks)
-            System.out.println(stock);
+            System.out.println("StockListView notified: " + stock);
     }
 
     @Override

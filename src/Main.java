@@ -3,31 +3,22 @@ import observer.DataSource;
 import observer.SpreadSheet;
 import observer.excercise.StatusBar;
 import observer.excercise.Stock;
+import observer.excercise.StockListView;
 
 public class Main {
    public static void main(String[] args) {
       var stock = new Stock();
 
       var statusBar = new StatusBar(stock);
+      var stockListView = new StockListView(stock);
 
       stock.addObserver(statusBar);
+      stock.addObserver(stockListView);
 
       stock.setPrice(7);
       stock.setSymbol("Hola");
 
-
-      /*
-      var dataSource = new DataSource();
-      var sheet1 = new SpreadSheet(dataSource);
-      var sheet2 = new SpreadSheet(dataSource);
-      var chart = new Chart(dataSource);
-
-      dataSource.addObserver(sheet1);
-      dataSource.addObserver(sheet2);
-      dataSource.addObserver(chart);
-
-      dataSource.setValue(1);
-
-       */
+      stock.setPrice(8);
+      stock.setSymbol("Mundo");
    }
 }
