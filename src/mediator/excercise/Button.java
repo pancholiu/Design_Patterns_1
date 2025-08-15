@@ -1,4 +1,4 @@
-package mediator;
+package mediator.excercise;
 
 public class Button extends UIControl {
     private boolean isEnabled;
@@ -9,6 +9,5 @@ public class Button extends UIControl {
 
     public void setEnabled(boolean enabled) {
         isEnabled = enabled;
-        notifyEventHandlers();
     }
 }
