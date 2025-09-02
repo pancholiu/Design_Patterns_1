@@ -1,14 +1,13 @@
-import mediator.ArticlesDialogBox;
-import mediator.excercise.SignUpDialogBox;
+import chainOfResponsability.*;
 
 public class Main {
    public static void main(String[] args) {
-      /*
-      var dialog = new ArticlesDialogBox();
-      dialog.simulateUserInteraction();
-       */
+      // authenticator -> logger -> compressor
 
-      var signDialog = new SignUpDialogBox();
-      signDialog.simulateUserInteraction();
+      var compressor = new Compressor(null);
+      var logger = new Logger(compressor);
+      var authenticator = new Authenticator(logger);
+      var server = new WebServer(authenticator);
+      server.handle(new HttpRequest("-", "1234"));
    }
 }

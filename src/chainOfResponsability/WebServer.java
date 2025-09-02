@@ -1,12 +1,13 @@
 package chainOfResponsability;
 
 public class WebServer {
-    public void handle(HttpRequest request) {
-        // Authentication
-        var authenticator = new Authenticator();
-        authenticator.authenticate(request);
+    private Handler handler;
 
-        // Logging
-        // Compression
+    public WebServer(Handler handler) {
+        this.handler = handler;
+    }
+
+    public void handle(HttpRequest request) {
+        handler.handle(request);
     }
 }
