@@ -6,12 +6,10 @@ import java.util.List;
 public class HtmlDocument {
     private List<HtmlNode> nodes = new ArrayList<>();
 
-    public void add(HtmlNode node) {
-        nodes.add(node);
-    }
+    public void add(HtmlNode node) { nodes.add(node); }
 
-    public void highlight() {
+    public void execute(Operation operation) {
         for(var node: nodes)
-            node.highlight();
+            node.execute(operation);
     }
 }
