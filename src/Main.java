@@ -1,10 +1,15 @@
 import visitor.*;
+import visitor.excercise.NoiseReductionFilter;
+import visitor.excercise.NormalizeFilter;
+import visitor.excercise.ReverbFilter;
+import visitor.excercise.WavFile;
 
 public class Main {
    public static void main(String[] args) {
-      var document = new HtmlDocument();
-      document.add(new HeadingNode());
-      document.add(new AnchorNode());
-      document.execute(new PlainTextOperation());
+      var wavFile = new WavFile().read("hola.wav");
+
+      wavFile.applyFilter(new NoiseReductionFilter());
+      wavFile.applyFilter(new ReverbFilter());
+      wavFile.applyFilter(new NormalizeFilter());
    }
 }
